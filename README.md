@@ -68,7 +68,7 @@ If you want to apply something to all the inputs but you need a few specific one
       </td>
       <td>
         string<br>
-        <em>left, right(default)</em>
+        <em>left, right(default), none</em>
       </td>
       <td>
         <p>This is the position where the label for the inputs should be placed, if informed.</p>
@@ -130,7 +130,7 @@ If you want to apply something to all the inputs but you need a few specific one
       </td>
       <td>
         string<br>
-        <em>left, right(default)</em>
+        <em>left, right(default), none</em>
       </td>
       <td>
         <p>This is the position where the label for the inputs should be placed, if informed.</p>
