@@ -55,3 +55,6 @@
   margin: 6px 5px;
   cursor: pointer;
 }
+.prettycheckbox a.checkboxDisabled {
+    opacity: 0.5;
+}
