@@ -34,7 +34,11 @@
         var clickedParent = $(this).closest('.clearfix');
         var input = clickedParent.find('input');
         var fakeCheckable = clickedParent.find('a');
-
+        
+        if (input.attr('disabled')) {
+            return;
+        }
+        
         if (input.attr('type') == 'radio') {
 
           $('input[name="' + input.attr('name') + '"]').each(function(index, el){
@@ -92,16 +96,16 @@
       var dom = [];
       var isChecked = el.attr('checked') !== undefined ? 'checked' : '';
 
-      if (labelPosition === 'labelright') {
+      var checkboxDisabled = el.attr('disabled') !== undefined ? 'checkboxDisabled' : '';
 
-        dom.push('<a href="#" class="' + isChecked + '"></a>');
-        dom.push('<label for="' + el.attr('id') + '">' + label + '</label>');
-
+      if (labelPosition === 'labelnone') {
+          dom.push('<a href="#" class="' + isChecked + ' ' + checkboxDisabled + '"></a>');
+      } else if (labelPosition === 'labelleft') {
+          dom.push('<label for="' + el.attr('id') + '">' + label + '</label>');
+          dom.push('<a href="#" class="' + isChecked + ' ' + checkboxDisabled + '"></a>');
       } else {
-
-        dom.push('<label for="' + el.attr('id') + '">' + label + '</label>');
-        dom.push('<a href="#" class="' + isChecked + '"></a>');
-
+          dom.push('<a href="#" class="' + isChecked + ' ' + checkboxDisabled + '"></a>');
+          dom.push('<label for="' + el.attr('id') + '">' + label + '</label>');
       }
 
       el.parent().append(dom.join('\n'));
